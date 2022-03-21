@@ -1,10 +1,10 @@
-#include<iostream>
 #include"Computer.h"
+#include<iostream>
 
+Computer::Computer(){}
 
 char Computer::makeMove(){
-    char move ;
-    move = 'R';
+    char move = 'R';
     return move;
-};
+}
 

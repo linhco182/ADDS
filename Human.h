@@ -1,11 +1,10 @@
-#ifndef HUMAN
-#define HUMAN
+#ifndef HUMAN_H
+#define HUMAN_H
+#include "Player.h"
 
-#include<iostream>
-
-class Human{
-    public:
-        
-        char makeMove();
+class Human: public Player{
+    public: 
+        Human();
+        virtual char makeMove();
 };
 #endif

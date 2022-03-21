@@ -1,12 +1,14 @@
+#include"Player.h"
 #include"Referee.h"
-#include"Computer.h"
 #include"Human.h"
+#include"Computer.h"
 #include<iostream>
 
 
-char Referee::refGame(Human player1, Computer player2){
-    char p1Move = player1.makeMove();
-    char p2Move = player2.makeMove();
+char Referee::refGame(Player* player1, Player* player2){
+    char p1Move = player1->makeMove();
+    char p2Move = player2->makeMove();
+    
 
     switch (p1Move){
         case 'R':
@@ -38,4 +40,4 @@ char Referee::refGame(Human player1, Computer player2){
         }
     }
 
-};
+}
