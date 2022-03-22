@@ -8,3 +8,10 @@ char Computer::makeMove(){
     return move;
 }
 
+void Computer::reset(){
+    count=0;
+    return;
+}
+
+
+Computer::~Computer(){}

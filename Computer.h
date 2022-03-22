@@ -5,8 +5,9 @@
 class Computer: public Player{
     public:
         Computer();
-
-        virtual char makeMove();
+        char makeMove();
+        void reset();
+        ~Computer();
 
 };
 #endif

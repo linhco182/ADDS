@@ -7,8 +7,8 @@
 
 class Avalanche : public Computer{
 public:
-    virtual char makeMove();
-
+    char makeMove();
+    void reset();
 };
 
 #endif

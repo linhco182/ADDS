@@ -7,3 +7,8 @@
 char Bureaucrat::makeMove(){
     return 'P';
 }
+
+void Bureaucrat::reset(){
+    count=0;
+    return;
+}

@@ -1,10 +1,14 @@
 #include "Tournament.h"
 #include "Referee.h"
 #include "Player.h"
+#include <iostream>
 
 Tournament::Tournament(){}
 
 Player * Tournament::run(std::array<Player*, 8> competitors){
+
+
+    
     Referee ref=Referee();
     char status;
     char oneStatus;
@@ -42,6 +46,10 @@ Player * Tournament::run(std::array<Player*, 8> competitors){
         
 
     }
+    
+    
+
+    
     //second round
     std::array<Player*, 2> competitors2;
     
@@ -49,7 +57,7 @@ Player * Tournament::run(std::array<Player*, 8> competitors){
         tally1=0;
         tally2=0;
         for (int k = 0; k < 5; k++){
-            oneStatus=ref.refGame(competitors2[2*i],competitors2[2*i+1]);
+            oneStatus=ref.refGame(competitors1[2*i],competitors1[2*i+1]);
             if(oneStatus=='W'){
                 tally1++;
             }else if(oneStatus=='L'){
@@ -75,6 +83,8 @@ Player * Tournament::run(std::array<Player*, 8> competitors){
     }
     Player* winner;
     //third round
+
+
     tally1=0;
     tally2=0;
         for (int k = 0; k < 5; k++){
@@ -99,6 +109,7 @@ Player * Tournament::run(std::array<Player*, 8> competitors){
     }else{
         winner=competitors2[0];
     }
+
     return winner;
 }
 

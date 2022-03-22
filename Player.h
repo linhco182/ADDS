@@ -6,7 +6,7 @@ class Player{
         Player();
         virtual char makeMove();
         virtual void reset();
-    private:
+        virtual ~Player();
         int count;
 };
 #endif
