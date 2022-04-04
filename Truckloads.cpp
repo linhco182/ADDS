@@ -5,6 +5,9 @@ Truckloads::Truckloads(){
 }
 
 int Truckloads::numTrucks(int numCrates, int loadSize){
+    if(numCrates<1){
+        return 0;
+    }
     int trucks=0;
     if (numCrates<loadSize+1){
         trucks=trucks+1;

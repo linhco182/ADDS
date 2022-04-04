@@ -3,10 +3,12 @@
 #include <iostream>
 
 EfficientTruckloads::EfficientTruckloads(){
-    memo[0]=0;
 }
 
 int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
+    if(numCrates<1){
+        return 0;
+    }
     if(memo[numCrates]){
         return memo[numCrates];
     }
