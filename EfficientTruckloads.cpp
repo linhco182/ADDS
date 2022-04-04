@@ -3,6 +3,7 @@
 #include <iostream>
 
 EfficientTruckloads::EfficientTruckloads(){
+    memo[0]=0;
 }
 
 int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
