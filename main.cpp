@@ -1,15 +1,17 @@
-#include "EfficientTruckloads.h"
 #include <iostream>
+#include <string>
+#include <vector>
+#include "ReduceGeneric.h"
+#include "ReduceGCD.h"
+using namespace std;
 
 int main(){
-    EfficientTruckloads revFunction=EfficientTruckloads();
-    int crates;
-    int load;
-    std::cin>>crates;
-    std::cin>>load;
+    vector<int> vect{ 21, 28, -70, 0 };
 
-    std::cout<<revFunction.numTrucks(crates,load)<<std::endl;
+    ReduceGCD mapfunc = ReduceGCD();
 
+    int x = mapfunc.reduce(vect);
 
-
+    std::cout<<x;
+    return 0;
 }
