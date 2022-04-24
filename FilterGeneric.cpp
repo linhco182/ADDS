@@ -5,7 +5,7 @@ std::vector<int> FilterGeneric::filter(std::vector<int> input){
     std::vector<int> newVector;
 
     if (input.size()==1){
-        if(g(input.back())=true){
+        if(g(input.back())==true){
              newVector.push_back(input.back());
         }
     }else{
