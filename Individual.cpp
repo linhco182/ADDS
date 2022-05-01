@@ -2,6 +2,10 @@
 #include <string>
 #include <stdlib.h>
 
+Individual::Individual(){
+    
+}
+
 Individual::Individual(int length){
     binaryString.assign(length,'0');
 }

@@ -7,6 +7,7 @@ private:
     std::string binaryString;
 public:
     Individual(int length);
+    Individual();
     Individual(std::string binary);
     std::string getString();
     int getBit(int pos);

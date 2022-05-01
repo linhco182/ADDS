@@ -4,6 +4,7 @@
 
 
 Individual BitFlip::Mutate(Individual dna, int k){
+    k=k-1;
     int pos = k % dna.getLength();
     Individual mutatedDna = dna;
     mutatedDna.flipBit(pos);
