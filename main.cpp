@@ -1,19 +1,29 @@
 #include <iostream>
 #include "Individual.h"
 #include "Mutator.h"
-#include "BitFlipProb.h"
+#include "Rearrange.h"
+
+
+Individual* execute(Individual * indPtr, Mutator * mPtr, int k){
+    static Individual newDNA = mPtr->Mutate(*indPtr,k);
+    Individual * newAddress = (Individual*)malloc(sizeof(newDNA));
+
+
+
+    return &newDNA;
+}
 
 int main(){
 
-    Individual bin1 = Individual(5);
+    Individual * bin1 =new Individual("011001010");
 
-    BitFlipProb mut1= BitFlipProb(0.6);
+    Rearrange * mut1=new  Rearrange();
 
-    Individual bin2 = mut1.Mutate(bin1, 1);
+    Individual* bin2 = execute(bin1,mut1,5);
 
-    std::cout<<bin1.getString()<<std::endl;
-    std::cout<<bin2.getString();
+    std::cout<<"Test"<<bin2->getLength();
 
 
     return 0;
 }
+

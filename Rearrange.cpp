@@ -1,10 +1,14 @@
 #include "Rearrange.h"
+#include <string>
 
-Individual Mutate(Individual dna, int k){
-    int pos = k % dna.getLength();
-    Individual mutatedDna = dna;
+Individual Rearrange::Mutate(Individual dna, int k){
+    std::string binaryOld = dna.getString();
+    std::string binaryNew;
     for (int i = 0; i < dna.getLength(); i++){
-        mutatedDna;
+        int pos = (k+i)%dna.getLength();
+        binaryNew.push_back(binaryOld.at(pos));
     }
+
+    Individual mutatedDna = Individual(binaryNew);
     return mutatedDna;
 }
