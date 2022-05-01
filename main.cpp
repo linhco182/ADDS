@@ -11,16 +11,15 @@ Individual* execute(Individual * indPtr, Mutator * mPtr, int k){
     Individual * newAddress = new Individual;
     *newAddress= mPtr->Mutate(*indPtr,k);
 
-
-
-
     return newAddress;
 }
 
 int main(){
 
-    std::string input = "000000 2 0111 2";
-    // std::cin>>input;
+    std::string input;
+    getline(std::cin,input);
+
+    std::cout<<input.at(6)<<std::endl;
 
     int pos=0;
 
@@ -36,7 +35,7 @@ int main(){
     std::string binarystr2 = input.substr(pos,input.find(" ",pos)-pos);
 
     pos = input.find(" ",pos)+1;
-
+    
     std::string k2 = input.substr(pos,input.find(" ",pos)-pos);
 
     Individual * bin1 =new Individual(binarystr1);
@@ -59,4 +58,3 @@ int main(){
 
     return 0;
 }
-
