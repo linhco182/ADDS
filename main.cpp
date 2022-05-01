@@ -1,17 +1,19 @@
 #include <iostream>
-#include <string>
-#include <vector>
-#include "ReduceGeneric.h"
-#include "ReduceGCD.h"
-using namespace std;
+#include "Individual.h"
+#include "Mutator.h"
+#include "BitFlipProb.h"
 
 int main(){
-    vector<int> vect{ 21, 28, -70, 0 };
 
-    ReduceGCD mapfunc = ReduceGCD();
+    Individual bin1 = Individual(5);
 
-    int x = mapfunc.reduce(vect);
+    BitFlipProb mut1= BitFlipProb(0.6);
 
-    std::cout<<x;
+    Individual bin2 = mut1.Mutate(bin1, 1);
+
+    std::cout<<bin1.getString()<<std::endl;
+    std::cout<<bin2.getString();
+
+
     return 0;
 }
