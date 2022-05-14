@@ -1,59 +1,53 @@
 #include <iostream>
-#include "Individual.h"
-#include "Mutator.h"
-#include "Rearrange.h"
-#include "BitFlip.h"
-#include <string>
+#include <vector>
+using namespace std;
+#include "QuickSort.h"
+#include "Sort.h"
+#include "RecursiveBinarySearch.h"
 
-
-
-Individual* execute(Individual * indPtr, Mutator * mPtr, int k){
-    Individual * newAddress = new Individual;
-    *newAddress= mPtr->Mutate(*indPtr,k);
-
-    return newAddress;
-}
 
 int main(){
 
-    std::string input;
-    getline(std::cin,input);
+    string userInput;
+    getline(cin,userInput);
 
-    std::cout<<input.at(6)<<std::endl;
+    QuickSort algorithm = QuickSort();
+    RecursiveBinarySearch searcher = RecursiveBinarySearch();
 
-    int pos=0;
+    int sLength = userInput.length();
+    vector<int> list;
+    int pointA = 0;
+    string item;
+    for (int i = 0; i < sLength; i++ ){
 
-    std::string binarystr1 = input.substr(0,input.find(" ",pos));
+        if (userInput[i]==' '){
+            for(int j = pointA; j < i; j++){
 
-    pos = input.find(" ",pos)+1;
+                item.push_back(userInput[j]);
+            }
+            pointA = i;
+            list.push_back(stoi(item));
+            item.clear();
+        }
 
-    std::string k1 = input.substr(pos,input.find(" ",pos)-pos);
+    }
 
-    pos = input.find(" ",pos)+1;
+    for(int i = pointA; i < sLength; i++){
+        item.push_back(userInput[i]);
+    }
+    list.push_back(stoi(item));
 
+    list=algorithm.sort(list);
 
-    std::string binarystr2 = input.substr(pos,input.find(" ",pos)-pos);
+    if(searcher.search(list,1)==true){
+        cout<<"true ";
+    }else{
+        cout<<"false ";
+    }
 
-    pos = input.find(" ",pos)+1;
-    
-    std::string k2 = input.substr(pos,input.find(" ",pos)-pos);
-
-    Individual * bin1 =new Individual(binarystr1);
-
-    Individual * bin2 = new Individual(binarystr2);
-
-    BitFlip * mut1= new  BitFlip();
-
-    Rearrange * mut2 = new Rearrange();
-
-    Individual* bin3 = execute(bin1,mut1,stoi(k1));
-
-    Individual* bin4 = execute(bin2,mut2,stoi(k2));
-
-    std::cout<<bin3->getString()<<" "<<bin4->getString()<<" "<<bin4->getMaxOnes();
-
-
-
+    for (int i = 0; i < list.size(); i++){
+        cout<<list[i]<<" ";
+    }
 
 
     return 0;
